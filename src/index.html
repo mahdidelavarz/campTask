@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسک دوره جاوااسکریپت</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link href="./styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script async src="./js/index.js"></script>
+    <div class="w-full h-40 flex justify-between items-center px-96">
+      <h1 class="text-3xl text-secondary-500 font-bold">لیست تراکنش ها</h1>
+      <div id="search" class="relative hidden">
+        <input
+          id="search-input"
+          type="text"
+          class="w-[40rem] pr-6 pl-10 py-6 shadow-md border text-xl rounded-3xl outline-none text-secondary-500"
+          placeholder="جستجو تراکنش ..."
+        />
+        <i
+          class="fa fa-search absolute top-[14px] left-6 text-3xl text-secondary-500 cursor-pointer"
+          aria-hidden="true"
+        ></i>
+      </div>
+    </div>
+    <div
+      class="w-full min-h-96 h-auto flex flex-col justify-center items-center"
+    >
+      <button
+        id="action-btn"
+        class="w-[26rem] h-28 bg-primary-800 text-3xl rounded-2xl text-white mt-40"
+      >
+        بار گذاری تراکنش ها
+      </button>
+      <div id="actions-container" class="w-full px-96 hidden">
+        <div
+          class="w-full rounded-2xl h-auto py-24 flex flex-col items-center shadow-lg border"
+        >
+          <h2 class="w-full mb-10 px-12 text-2xl text-secondary-500">
+            لیست تراکنش های شما
+          </h2>
+          <div class="border rounded-xl" id="main">
+            <table class="text-2xl" id="table">
+              <thead>
+                <tr class="flex bg-secondary-200 rounded-t-xl">
+                  <th class="w-80 py-8 flex justify-center">ردیف</th>
+                  <th class="w-80 py-8 flex justify-center">نوع تراکنش</th>
+                  <th
+                    id="price"
+                    class="w-80 py-8 flex justify-center gap-2 items-center cursor-pointer"
+                  >
+                    <span>مبلغ</span>
+                    <i
+                      class="fa fa-chevron-down icon"
+                      id="price-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </th>
+                  <th class="w-80 py-8 flex justify-center">شماره پیگیری</th>
+                  <th
+                    id="date"
+                    class="w-80 py-8 flex justify-center gap-2 items-center cursor-pointer"
+                  >
+                    <span>تاریخ تراکنش</span>
+                    <i
+                      class="fa fa-chevron-down icon"
+                      id="date-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
